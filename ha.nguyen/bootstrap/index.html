@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 5 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="javascript.js"></script>
+</head>
+<body>
+
+<div class="container-fluid  text-center">
+    <form name="myform"> 
+      <div id="a">
+        <h2>
+         <div class="input-group-prepend" >
+          <img src="logo.png">
+         <div id="a1">
+            Log-in to your account
+          </div>
+         </div>
+        </h2>
+      </div>
+      <div id="b" class="form-control" >
+          <div class="input-group" id="b1">
+              <span class="input-group-text" id="basic-addon1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                  </svg>
+              </span>
+            <input type="text" name="email" placeholder="E-mail address" class="form-control" > 
+          </div>
+          <div class="input-group" id="b2">
+              <span class="input-group-text" id="basic-addon1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                      <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+                  </svg>
+              </span>
+              <input type="password" name="password" placeholder="Password"  class="form-control">
+          </div>
+          <div class="input-group" id="b3">
+              <button type="button" class="btn btn-info"  onclick="Validate()">Login</button>
+          </div>
+      </div>
+      <div id="c" class="form-control" >
+        New to us? <a href="#">Sign Up</a>
+      </div>
+    </form>
+  
+</div>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+body {
+  background-color: #DADADA;
+  margin-top: 10%;
+}
+body > 
+.mb-3{
+  margin-left: 10%;
+}
+form{
+  margin-left: 41%;
+  margin-top: 10px;
+}
+div[id ="a"]{
+    width: 30%; 
+    height: 50%;
+}
+img{
+    width: 30px; 
+    height: 30px;
+}
+div[id = "a1"]{
+    margin-left: 10px; 
+    font-size: 80%; 
+    color: #33CCCC;
+}
+div[id="b"]{
+    width: 30%; 
+    height: 50%;
+  }
+div[id="b1"]{
+  margin-top: 10px;
+}
+div[id="b2"]{
+  margin-top: 10px;
+}
+div[id="b3"]{
+  margin-top: 10px;
+}
+div[id="c"]{
+    margin-top: 10px;
+    width: 30%; 
+    height: 50%;
+}
+button {
+    width: 100%;
+}
+p{
+  
+}
