@@ -22,35 +22,35 @@
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="full_name" placeholder="FULL NAME" >
+                        <input type="text" name="full_name" pattern="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})+$" placeholder="FULL NAME" required >
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="home icon"></i>
-                        <input type="text" name="company_name" placeholder="COMPANY NAME" >
+                        <input type="text" name="company_name" pattern="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})+$" placeholder="COMPANY NAME" required >
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="mobile icon"></i>
-                        <input type="text" name="business_phone" placeholder="BUSINESS PHONE" >
+                        <input type="text" name="business_phone" pattern="^\d{10}$" placeholder="BUSINESS PHONE" required>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="envelope icon"></i>
-                        <input type="email" name="email" placeholder="EMAIL" >
+                        <input type="email" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="EMAIL" required>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="comment icon"></i>
-                        <input type="text" name="message" placeholder="MESSAGE" >
+                        <input type="text" name="message" placeholder="MESSAGE" required>
                     </div>
                 </div><br>
                     <div class="g-recaptcha" data-sitekey="6Le90ZUjAAAAAFpiWYrO31ETaTEcE1x877I5mCU3"></div><br>
-                    <button onclick="Validate()" id="btn2" type="submit" class="ui button">SEND MESSAGE</button>
+                    <button id="btn2" type="submit" class="ui button">SEND MESSAGE</button>
               </form>
           </div>
           <div class="column bg-image" style="background-image: url('https://images.pexels.com/photos/1707823/pexels-photo-1707823.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
@@ -68,7 +68,7 @@
                         <li>Automation Testing and Software Maintenance services for North America, Japan, Singapore and VietNam.</li>
                      </ul>
                 </div>
-                
+
                 <hr/>
                 <div id="text">
                     <h2>INFORMATION</h2>
