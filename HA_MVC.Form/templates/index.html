@@ -14,17 +14,16 @@
                 url: "http://localhost:8080/form",
                 method: "POST",
                 dataType: "json",
-                data: {
-                    data__value = JSON.stringify(
+                data: JSON.stringify(
                     {
-                        full_name : $('#full_name').val(),
-                        company_name :  $('#company_name').val(),
-                        business_phone :  $('#business_phone').val(),
+                        fullname : $('#fullname').val(),
+                        companyname :  $('#companyname').val(),
+                        businessphone :  $('#businessphone').val(),
                         email :  $('#email').val(),
                         message :  $('#message').val()
-                    })
-                }
-        });
+                    }) 
+                })
+        };
 </script>
 
 </head>
@@ -42,31 +41,31 @@
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="user icon"></i>
-                        <input type="text" name="full_name" pattern="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})+$" placeholder="FULL NAME" required >
+                        <input type="text" id="fullname" name="full_name" pattern="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})+$" placeholder="FULL NAME" required >
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="home icon"></i>
-                        <input type="text" name="company_name" pattern="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})+$" placeholder="COMPANY NAME" required >
+                        <input type="text" id="companyname" name="company_name" pattern="^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})+$" placeholder="COMPANY NAME" required >
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="mobile icon"></i>
-                        <input type="text" name="business_phone" pattern="^\d{10}$" placeholder="BUSINESS PHONE" required>
+                        <input type="text" id="businessphone" name="business_phone" pattern="^\d{10}$" placeholder="BUSINESS PHONE" required>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="envelope icon"></i>
-                        <input type="email" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="EMAIL" required>
+                        <input type="email" id="email" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="EMAIL" required>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="comment icon"></i>
-                        <input type="text" name="message" placeholder="MESSAGE" required>
+                        <input type="text" id="message" name="message" placeholder="MESSAGE" required>
                     </div>
                 </div><br>
                     <div class="g-recaptcha" data-sitekey="6Le90ZUjAAAAAFpiWYrO31ETaTEcE1x877I5mCU3"></div><br>
