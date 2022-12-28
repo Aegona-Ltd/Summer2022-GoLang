@@ -14,7 +14,8 @@ func SetupRouter() *gin.Engine {
 		r.POST("form", controller.PostForm)
 		r.GET("form", controller.GetALLForm)
 		r.GET("form/:email", controller.GetBYEmail)
-		r.GET("form/:email", controller.GetBYName)
+		r.GET("form/name/:name", controller.GetBYName)
+		r.GET("form/email", controller.GetOrderEmail)
 	}
 	return r
 }

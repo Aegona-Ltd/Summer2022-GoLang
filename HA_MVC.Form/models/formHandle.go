@@ -28,7 +28,14 @@ func GetByEmail_Handle(form *[]Form, email string) (err error) {
 
 }
 func GetByName_Handle(form *[]Form, name string) (err error) {
-	err = Database.DB.Where("name = ?", name).Find(form).Error
+	err = Database.DB.Where("full_name = ?", name).Find(form).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
+func GetOrder_Handle(form *[]Form) (err error) {
+	err = Database.DB.Order("full_name desc").Find(&form).Error
 	if err != nil {
 		return err
 	}

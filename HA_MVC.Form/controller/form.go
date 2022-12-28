@@ -50,7 +50,18 @@ func GetBYName(c *gin.Context) {
 	log.Print("Start")
 	var form []models.Form
 	name := c.Params.ByName("name")
-	err := models.GetByEmail_Handle(&form, name)
+	err := models.GetByName_Handle(&form, name)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, form)
+	}
+	log.Print("End")
+}
+func GetOrderEmail(c *gin.Context) {
+	log.Print("Start")
+	var form []models.Form
+	err := models.GetOrder_Handle(&form)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 	} else {
