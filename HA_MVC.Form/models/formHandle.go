@@ -12,3 +12,25 @@ func CreateForm(form *Form) (err error) {
 	}
 	return nil
 }
+func GetALL_Form(form *[]Form) (err error) {
+	err = Database.DB.Find(form).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
+func GetByEmail_Handle(form *[]Form, email string) (err error) {
+	err = Database.DB.Where("email = ?", email).Find(form).Error
+	if err != nil {
+		return err
+	}
+	return nil
+
+}
+func GetByName_Handle(form *[]Form, name string) (err error) {
+	err = Database.DB.Where("name = ?", name).Find(form).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

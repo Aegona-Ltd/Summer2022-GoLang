@@ -2,6 +2,7 @@ package controller
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"HA_MVC.Form/models"
@@ -9,6 +10,7 @@ import (
 )
 
 func PostForm(c *gin.Context) {
+	log.Print("Start")
 	var form models.Form
 	c.ShouldBindJSON(&form)
 	err := models.CreateForm(&form)
@@ -18,4 +20,41 @@ func PostForm(c *gin.Context) {
 	} else {
 		c.JSON(http.StatusOK, form)
 	}
+	log.Print("End")
+}
+func GetALLForm(c *gin.Context) {
+	log.Print("Start")
+	var form []models.Form
+	// c.ShouldBindJSON(&form)
+	err := models.GetALL_Form(&form)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, form)
+	}
+	log.Print("End")
+}
+func GetBYEmail(c *gin.Context) {
+	log.Print("Start")
+	var form []models.Form
+	email := c.Params.ByName("email")
+	err := models.GetByEmail_Handle(&form, email)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, form)
+	}
+	log.Print("End")
+}
+func GetBYName(c *gin.Context) {
+	log.Print("Start")
+	var form []models.Form
+	name := c.Params.ByName("name")
+	err := models.GetByEmail_Handle(&form, name)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, form)
+	}
+	log.Print("End")
 }

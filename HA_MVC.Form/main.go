@@ -6,6 +6,7 @@ import (
 	"HA_MVC.Form/Database"
 	"HA_MVC.Form/models"
 	"HA_MVC.Form/routes"
+	"github.com/gin-contrib/cors"
 	"github.com/jinzhu/gorm"
 )
 
@@ -20,6 +21,7 @@ func main() {
 	defer Database.DB.Close()
 	Database.DB.AutoMigrate(&models.Form{})
 	r := routes.SetupRouter()
+	r.Use(cors.Default())
 
 	//running
 	r.Run(":8080")
