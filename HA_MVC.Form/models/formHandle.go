@@ -28,14 +28,32 @@ func GetByEmail_Handle(form *[]Form, email string) (err error) {
 
 }
 func GetByName_Handle(form *[]Form, name string) (err error) {
-	err = Database.DB.Where("full_name = ?", name).Find(form).Error
+	err = Database.DB.Where("fullname = ?", name).Find(form).Error
 	if err != nil {
 		return err
 	}
 	return nil
 }
 func GetOrder_Handle(form *[]Form) (err error) {
-	err = Database.DB.Order("full_name desc").Find(&form).Error
+	err = Database.DB.Order("fullname desc").Find(&form).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
+func GetByID_Handle(form *Form, id string) (err error) {
+	err = Database.DB.Where("id = ?", id).First(form).Error
+	if err != nil {
+		return Database.DB.Error
+	}
+	return nil
+}
+func Update_Handle(form *Form, id string) (err error) {
+	Database.DB.Save(form)
+	return nil
+}
+func GetOrderByDate_Handle(form *[]Form) (err error) {
+	err = Database.DB.Order("createtime desc").Find(&form).Error
 	if err != nil {
 		return err
 	}

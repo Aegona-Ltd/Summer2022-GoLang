@@ -18,250 +18,59 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="stylegetform.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script language="javascript">
-      function load_ajax() {
-        $.ajax({
-          type: "GET",
-          url: "http://localhost:8080/form",
-          method: "GET",
-          dataType: "json",
-          success: function (data) {
-          // function createTable(tableData, TableRow) {
-
-          //   var table = document.getElementById("myTable");
-
-          //   var tableBody = document.createElement("tbody");
-          //   tableData.forEach(function (rowData) {
-          //     var row = document.createElement("tr");
-          //     rowData.forEach(function (cellData) {
-          //       var cell = document.createElement("th");
-          //       cell.appendChild(document.createTextNode(cellData));
-          //       row.appendChild(cell);
-          //     });
-          //     tableBody.appendChild(row);
-          //   });
-          //   TableRow.forEach(function (rowData) {
-          //     let row = document.createElement("tr");
-          //     for (let property in rowData) {
-          //       let cell = document.createElement("td");
-          //       cell.appendChild(document.createTextNode(rowData[property]));
-          //       row.appendChild(cell);
-          //     }
-          //     tableBody.appendChild(row);
-          //   });
-          //   table.appendChild(tableBody);
-          //   document.body.appendChild(table);
-          // }
-          
-          // function getdata(item) {
-          //         return [item.id, item.fullname, item.companyname, item.businessphone, item.email, item.message];        
-          // };
-          
-          // var arr = data.map(getdata)
-          // document.getElementById("row").innerHTML = arr;
-          // createTable(
-          //   [["Id", "Fullname", "Company name", "Business phone", "Email", "Message"]],
-          //   arr
-          // );
-            id : $('#id').html(data.map(getid));
-            fullname : $('#fullname').html(data.map(getfullname));
-            companyname :  $('#companyname').html(data.map(getcompany));
-            businessphone :  $('#businessphone').html(data.map(getbusinessphone));
-            email :  $('#email').html(data.map(getemail));
-            message :  $('#message').html(data.map(getmessage));
-
-            console.log( data.map(getid));
-            function getid(item) {
-                  return item.id + "<br>";
-            };
-            function getfullname(item) {
-              return item.fullname + "<br>";
-            };
-            function getcompany(item) {
-              return item.companyname + "<br>";
-            };
-            function getbusinessphone(item) {
-              return item.businessphone + "<br>";
-            };
-            function getemail(item) {
-              return item.email + "<br>";
-            };
-            function getmessage(item) {
-              return item.message + "<br>";
-            };   
-          },
-        });
-      }
-      function GetEmail(){
-        stringemail = document.getElementById("param").value;
-        $.ajax({
-          type: "GET",
-          url: "http://localhost:8080/form/"+ stringemail,
-          method: "GET",
-          dataType: "json",
-          success: function (data) {
-            id : $('#id').html(data.map(getid));
-            fullname : $('#fullname').html(data.map(getfullname));
-            companyname :  $('#companyname').html(data.map(getcompany));
-            businessphone :  $('#businessphone').html(data.map(getbusinessphone));
-            email :  $('#email').html(data.map(getemail));
-            message :  $('#message').html(data.map(getmessage));
-
-            console.log( data.map(getid));
-            function getid(item) {
-                  return item.id + "<br>";
-            };
-            function getfullname(item) {
-              return item.fullname + "<br>";
-            };
-            function getcompany(item) {
-              return item.companyname + "<br>";
-            };
-            function getbusinessphone(item) {
-              return item.businessphone + "<br>";
-            };
-            function getemail(item) {
-              return item.email + "<br>";
-            };
-            function getmessage(item) {
-              return item.message + "<br>";
-            };   
-          },
-        });
-      }
-      function GetName(){
-        stringname = document.getElementById("param").value;
-        $.ajax({
-          type: "GET",
-          url: "http://localhost:8080/form/name/"+ stringname,
-          method: "GET",
-          dataType: "json",
-          success: function (data) {
-            id : $('#id').html(data.map(getid));
-            fullname : $('#fullname').html(data.map(getfullname));
-            companyname :  $('#companyname').html(data.map(getcompany));
-            businessphone :  $('#businessphone').html(data.map(getbusinessphone));
-            email :  $('#email').html(data.map(getemail));
-            message :  $('#message').html(data.map(getmessage));
-
-            console.log( data.map(getid));
-            function getid(item) {
-                  return item.id + "<br>";
-            };
-            function getfullname(item) {
-              return item.fullname + "<br>";
-            };
-            function getcompany(item) {
-              return item.companyname + "<br>";
-            };
-            function getbusinessphone(item) {
-              return item.businessphone + "<br>";
-            };
-            function getemail(item) {
-              return item.email + "<br>";
-            };
-            function getmessage(item) {
-              return item.message + "<br>";
-            };   
-          },
-        });
-      }
-      function GetOder(){
-        $.ajax({
-          type: "GET",
-          url: "http://localhost:8080/form/email",
-          method: "GET",
-          dataType: "json",
-          success: function (data) {
-            id : $('#id').html(data.map(getid));
-            fullname : $('#fullname').html(data.map(getfullname));
-            companyname :  $('#companyname').html(data.map(getcompany));
-            businessphone :  $('#businessphone').html(data.map(getbusinessphone));
-            email :  $('#email').html(data.map(getemail));
-            message :  $('#message').html(data.map(getmessage));
-
-            console.log( data.map(getid));
-            function getid(item) {
-                  return item.id + "<br>";
-            };
-            function getfullname(item) {
-              return item.fullname + "<br>";
-            };
-            function getcompany(item) {
-              return item.companyname + "<br>";
-            };
-            function getbusinessphone(item) {
-              return item.businessphone + "<br>";
-            };
-            function getemail(item) {
-              return item.email + "<br>";
-            };
-            function getmessage(item) {
-              return item.message + "<br>";
-            };   
-          },
-        });
-      }
-    </script>
+    <script src="javascript.js" type="text/javascript"></script>
   </head>
   <body>
-    <table class="ui striped table" id = "myTable" >
+    <div class="ui" id="loadtable">
+      <table class="ui striped table" id="myTable">
+        <tr>
+          <th>
+            <font style="vertical-align: inherit"><font style="vertical-align: inherit">ID</font></font>
+          </th>
+          <th>
+            <font style="vertical-align: inherit"><font style="vertical-align: inherit">Full name</font></font>
+          </th>
+          <th>
+            <font style="vertical-align: inherit"><font style="vertical-align: inherit">Company name</font></font>
+          </th>
+          <th>
+            <font style="vertical-align: inherit"><font style="vertical-align: inherit">Business phone</font></font>
+          </th>
+          <th>
+            <font style="vertical-align: inherit"><font style="vertical-align: inherit">Email</font></font>
+          </th>
+          <th>
+            <font style="vertical-align: inherit"><font style="vertical-align: inherit">Message</font></font>
+          </th>
+          <th>
+            <font style="vertical-align: inherit"><font style="vertical-align: inherit">Created Time</font></font>
+          </th>
+          <th>
+            <font style="vertical-align: inherit"><font style="vertical-align: inherit">Updated Time</font></font>
+          </th>
+        </tr>
+        <tbody>
           <tr>
-            <th>
-              <font style="vertical-align: inherit"
-                ><font style="vertical-align: inherit">ID</font></font
-              >
-            </th>
-            <th>
-              <font style="vertical-align: inherit"
-                ><font style="vertical-align: inherit">Full name</font></font
-              >
-            </th>
-            <th>
-              <font style="vertical-align: inherit"
-                ><font style="vertical-align: inherit">Company name</font></font
-              >
-            </th>
-            <th>
-              <font style="vertical-align: inherit"
-                ><font style="vertical-align: inherit"
-                  >Business phone</font
-                ></font
-              >
-            </th>
-            <th>
-              <font style="vertical-align: inherit"
-                ><font style="vertical-align: inherit">Email</font></font
-              >
-            </th>
-            <th>
-              <font style="vertical-align: inherit"
-                ><font style="vertical-align: inherit">Message</font></font
-              >
-            </th>
+            <td id="id"></td>
+            <td id="fullname"></td>
+            <td id="companyname"></td>
+            <td id="businessphone"></td>
+            <td id="email"></td>
+            <td id="message"></td>
+            <td id="createtime"></td>
+            <td id="updatetime"></td>
           </tr>
-          <tbody>
-            <tr>
-              <td id="id"></td>
-              <td id="fullname"></td>
-              <td id="companyname"></td>
-              <td id="businessphone"></td>
-              <td id="email"></td>
-              <td id="message"></td>
-            </tr>
-          </tbody>
-          
-        <button onclick="load_ajax()" id="btn2" type="submit" class="ui button">
-          GET
-        </button>
-        <button onclick="GetEmail()">GETEMAIL</button>
-        <input type="text" id="param">
-        <button onclick="GetName()">GETNAME</button>
-        <button onclick="GetOder()">ORDER</button>
-    </table>
+        </tbody>
+        <button onclick="load_ajax()">GET ALL</button>
+        <button onclick="GetEmail()">GET EMAIL</button>
+        <button onclick="GetName()">GET NAME</button>
+        <button onclick="GetOder()">ORDER EMAIL</button>
+        <button onclick="GetOderByCreateTime()">ORDER CREATETIME</button>
+        <input type="text" id="param" placeholder="Search Email or Name" />
+
+      </table>
+    </div>
   </body>
 </html>

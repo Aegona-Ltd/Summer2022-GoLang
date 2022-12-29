@@ -4,9 +4,7 @@ import (
 	"fmt"
 
 	"HA_MVC.Form/Database"
-	"HA_MVC.Form/models"
 	"HA_MVC.Form/routes"
-	"github.com/gin-contrib/cors"
 	"github.com/jinzhu/gorm"
 )
 
@@ -19,9 +17,9 @@ func main() {
 		fmt.Println("Status:", err)
 	}
 	defer Database.DB.Close()
-	Database.DB.AutoMigrate(&models.Form{})
+	// Database.DB.AutoMigrate(&models.Form{})
 	r := routes.SetupRouter()
-	r.Use(cors.Default())
+	// r.Use(cors.Default())
 
 	//running
 	r.Run(":8080")

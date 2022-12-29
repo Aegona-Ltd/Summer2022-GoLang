@@ -16,6 +16,8 @@ func SetupRouter() *gin.Engine {
 		r.GET("form/:email", controller.GetBYEmail)
 		r.GET("form/name/:name", controller.GetBYName)
 		r.GET("form/email", controller.GetOrderEmail)
+		r.GET("form/date", controller.GetOrderCreateTime)
+		r.PUT("form/:id", controller.PutData)
 	}
 	return r
 }
