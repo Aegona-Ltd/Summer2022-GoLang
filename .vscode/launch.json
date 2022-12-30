@@ -9,7 +9,7 @@
         "type": "go",
         "request": "launch",
         "mode": "auto",
-        "program": "D:/Summer2022-GoLang/HA_MVC.Form/main.go"
+        "program": "D:/Summer2022-GoLang/APP_API/main.go"
     } 
     ]
 }
