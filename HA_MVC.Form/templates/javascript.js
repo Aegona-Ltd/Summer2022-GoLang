@@ -5,79 +5,24 @@ function load_ajax() {
     method: "GET",
     dataType: "json",
     success: function (data) {
-      // function createTable(tableData, TableRow) {
-
-      //   var table = document.getElementById("myTable");
-
-      //   var tableBody = document.createElement("tbody");
-      //   tableData.forEach(function (rowData) {
-      //     var row = document.createElement("tr");
-      //     rowData.forEach(function (cellData) {
-      //       var cell = document.createElement("th");
-      //       cell.appendChild(document.createTextNode(cellData));
-      //       row.appendChild(cell);
-      //     });
-      //     tableBody.appendChild(row);
-      //   });
-      //   TableRow.forEach(function (rowData) {
-      //     let row = document.createElement("tr");
-      //     for (let property in rowData) {
-      //       let cell = document.createElement("td");
-      //       cell.appendChild(document.createTextNode(rowData[property]));
-      //       row.appendChild(cell);
-      //     }
-      //     tableBody.appendChild(row);
-      //   });
-      //   table.appendChild(tableBody);
-      //   document.body.appendChild(table);
-      // }
-
-      // function getdata(item) {
-      //         return [item.id, item.fullname, item.companyname, item.businessphone, item.email, item.message, item.createdtime, item.updatedtime];
-      // };
-
-      // var arr = data.map(getdata)
-      // console.log(arr);
-      // document.getElementById("row").innerHTML = arr;
-      // createTable(
-      //   [["Id", "Fullname", "Company name", "Business phone", "Email", "Message", "CreatedTime", "UpdatedTime"]],
-      //   arr
-      // );
-      id: $("#id").html(data.map(getid));
-      fullname: $("#fullname").html(data.map(getfullname));
-      companyname: $("#companyname").html(data.map(getcompany));
-      businessphone: $("#businessphone").html(data.map(getbusinessphone));
-      email: $("#email").html(data.map(getemail));
-      message: $("#message").html(data.map(getmessage));
-      createdtime: $("#createtime").html(data.map(getcreatetime));
-      updatedtime: $("#updatetime").html(data.map(getupdatetime));
-      console.log(data.map(getupdatetime));
-
-      function getid(item) {
-        return item.id + "<br>";
+      let placeholder = document.querySelector("#tbody");
+      let out = "";
+      for(let product of data){
+         out += `
+            <tr>
+               <td> ${product.id}</td>
+               <td> ${product.fullname}</td>
+               <td> ${product.companyname}</td>
+               <td> ${product.businessphone}</td>
+               <td> ${product.email}</td>
+               <td> ${product.message}</td>
+               <td> ${product.createtime}</td>
+               <td> ${product.updatetime}</td>
+            </tr>
+         `;
       }
-      function getfullname(item) {
-        return item.fullname + "<br>";
-      }
-      function getcompany(item) {
-        return item.companyname + "<br>";
-      }
-      function getbusinessphone(item) {
-        return item.businessphone + "<br>";
-      }
-      function getemail(item) {
-        return item.email + "<br>";
-      }
-      function getmessage(item) {
-        return item.message + "<br>";
-      }
-      function getcreatetime(item) {
-        return item.createtime +"<br>";
-      }
-      function getupdatetime(item) {
-          return item.updatetime +"<br>";
-      }
-    },
+      placeholder.innerHTML = out;
+    }
   });
 }
 function GetEmail() {
@@ -88,40 +33,24 @@ function GetEmail() {
     method: "GET",
     dataType: "json",
     success: function (data) {
-      id: $("#id").html(data.map(getid));
-      fullname: $("#fullname").html(data.map(getfullname));
-      companyname: $("#companyname").html(data.map(getcompany));
-      businessphone: $("#businessphone").html(data.map(getbusinessphone));
-      email: $("#email").html(data.map(getemail));
-      message: $("#message").html(data.map(getmessage));
-      createdtime: $("#createtime").html(data.map(getcreatetime));
-      updatedtime: $("#updatetime").html(data.map(getupdatetime));
-
-      function getid(item) {
-        return item.id + "<br>";
+      let placeholder = document.querySelector("#tbody");
+      let out = "";
+      for(let product of data){
+         out += `
+            <tr>
+               <td> ${product.id}</td>
+               <td> ${product.fullname}</td>
+               <td> ${product.companyname}</td>
+               <td> ${product.businessphone}</td>
+               <td> ${product.email}</td>
+               <td> ${product.message}</td>
+               <td> ${product.createtime}</td>
+               <td> ${product.updatetime}</td>
+            </tr>
+         `;
       }
-      function getfullname(item) {
-        return item.fullname + "<br>";
-      }
-      function getcompany(item) {
-        return item.companyname + "<br>";
-      }
-      function getbusinessphone(item) {
-        return item.businessphone + "<br>";
-      }
-      function getemail(item) {
-        return item.email + "<br>";
-      }
-      function getmessage(item) {
-        return item.message + "<br>";
-      }
-      function getcreatetime(item) {
-        return item.createtime + "<br>";
-      }
-      function getupdatetime(item) {
-        return item.updatetime + "<br>";
-      }
-    },
+      placeholder.innerHTML = out;
+    }
   });
 }
 function GetName() {
@@ -132,39 +61,24 @@ function GetName() {
     method: "GET",
     dataType: "json",
     success: function (data) {
-      id: $("#id").html(data.map(getid));
-      fullname: $("#fullname").html(data.map(getfullname));
-      companyname: $("#companyname").html(data.map(getcompany));
-      businessphone: $("#businessphone").html(data.map(getbusinessphone));
-      email: $("#email").html(data.map(getemail));
-      message: $("#message").html(data.map(getmessage));
-      createdtime: $("#createtime").html(data.map(getcreatetime));
-      updatedtime: $("#updatetime").html(data.map(getupdatetime));
-      function getid(item) {
-        return item.id + "<br>";
+      let placeholder = document.querySelector("#tbody");
+      let out = "";
+      for(let product of data){
+         out += `
+            <tr>
+               <td> ${product.id}</td>
+               <td> ${product.fullname}</td>
+               <td> ${product.companyname}</td>
+               <td> ${product.businessphone}</td>
+               <td> ${product.email}</td>
+               <td> ${product.message}</td>
+               <td> ${product.createtime}</td>
+               <td> ${product.updatetime}</td>
+            </tr>
+         `;
       }
-      function getfullname(item) {
-        return item.fullname + "<br>";
-      }
-      function getcompany(item) {
-        return item.companyname + "<br>";
-      }
-      function getbusinessphone(item) {
-        return item.businessphone + "<br>";
-      }
-      function getemail(item) {
-        return item.email + "<br>";
-      }
-      function getmessage(item) {
-        return item.message + "<br>";
-      }
-      function getcreatetime(item) {
-        return item.createtime + "<br>";
-      }
-      function getupdatetime(item) {
-        return item.updatetime + "<br>";
-      }
-    },
+      placeholder.innerHTML = out;
+    }
   });
 }
 function GetOder() {
@@ -174,40 +88,24 @@ function GetOder() {
     method: "GET",
     dataType: "json",
     success: function (data) {
-      id: $("#id").html(data.map(getid));
-      fullname: $("#fullname").html(data.map(getfullname));
-      companyname: $("#companyname").html(data.map(getcompany));
-      businessphone: $("#businessphone").html(data.map(getbusinessphone));
-      email: $("#email").html(data.map(getemail));
-      message: $("#message").html(data.map(getmessage));
-      createdtime: $("#createtime").html(data.map(getcreatetime));
-      updatedtime: $("#updatetime").html(data.map(getupdatetime));
-      console.log(data.map(getid));
-      function getid(item) {
-        return item.id + "<br>";
+      let placeholder = document.querySelector("#tbody");
+      let out = "";
+      for(let product of data){
+         out += `
+            <tr>
+               <td> ${product.id}</td>
+               <td> ${product.fullname}</td>
+               <td> ${product.companyname}</td>
+               <td> ${product.businessphone}</td>
+               <td> ${product.email}</td>
+               <td> ${product.message}</td>
+               <td> ${product.createtime}</td>
+               <td> ${product.updatetime}</td>
+            </tr>
+         `;
       }
-      function getfullname(item) {
-        return item.fullname + "<br>";
-      }
-      function getcompany(item) {
-        return item.companyname + "<br>";
-      }
-      function getbusinessphone(item) {
-        return item.businessphone + "<br>";
-      }
-      function getemail(item) {
-        return item.email + "<br>";
-      }
-      function getmessage(item) {
-        return item.message + "<br>";
-      }
-      function getcreatetime(item) {
-        return item.createtime + "<br>";
-      }
-      function getupdatetime(item) {
-        return item.updatetime + "<br>";
-      }
-    },
+      placeholder.innerHTML = out;
+    }
   });
 }
 function GetOderByCreateTime() {
@@ -217,39 +115,47 @@ function GetOderByCreateTime() {
     method: "GET",
     dataType: "json",
     success: function (data) {
-      id: $("#id").html(data.map(getid));
-      fullname: $("#fullname").html(data.map(getfullname));
-      companyname: $("#companyname").html(data.map(getcompany));
-      businessphone: $("#businessphone").html(data.map(getbusinessphone));
-      email: $("#email").html(data.map(getemail));
-      message: $("#message").html(data.map(getmessage));
-      createdtime: $("#createtime").html(data.map(getcreatetime));
-      updatedtime: $("#updatetime").html(data.map(getupdatetime));
-      console.log(data.map(getid));
-      function getid(item) {
-        return item.id + "<br>";
+      let placeholder = document.querySelector("#tbody");
+      let out = "";
+      for(let product of data){
+         out += `
+            <tr>
+               <td> ${product.id}</td>
+               <td> ${product.fullname}</td>
+               <td> ${product.companyname}</td>
+               <td> ${product.businessphone}</td>
+               <td> ${product.email}</td>
+               <td> ${product.message}</td>
+               <td> ${product.createtime}</td>
+               <td> ${product.updatetime}</td>
+            </tr>
+         `;
       }
-      function getfullname(item) {
-        return item.fullname + "<br>";
-      }
-      function getcompany(item) {
-        return item.companyname + "<br>";
-      }
-      function getbusinessphone(item) {
-        return item.businessphone + "<br>";
-      }
-      function getemail(item) {
-        return item.email + "<br>";
-      }
-      function getmessage(item) {
-        return item.message + "<br>";
-      }
-      function getcreatetime(item) {
-        return item.createtime + "<br>";
-      }
-      function getupdatetime(item) {
-        return item.updatetime + "<br>";
-      }
-    },
+      placeholder.innerHTML = out;
+    }
   });
+    $(document).ready( function () {
+      $('#myTable').bdt();
+    });
+
 }
+
+
+new Vue({
+  el: "#myTable",
+  data: {
+    columns: ['id', 'fullname', 'companyname', 'businessphone', 'email', 'message', 'createtime', 'updatetime'],
+    data: load_ajax(),
+    // options: {
+    //   // headings: {
+    //   //   id: 'id',
+    //   //   name: 'Country Name',
+    //   //   code: 'Country Code',
+    //   //   uri: 'View Record'
+    //   // },
+    //   sortable: ['name', 'code'],
+    //   filterable: ['name', 'code']
+    // }
+  }
+});
+

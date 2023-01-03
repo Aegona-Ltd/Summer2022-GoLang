@@ -3,17 +3,22 @@ body{
 
 }
 div[id ="loadtable"]{
-    margin-top: 2%;
+    margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
 }
 button{
-    background-color: #A52A2A;
+    background-color: #c2262e;
     color: aliceblue; 
     margin-bottom: 2%;
-    margin-left: 2%;
+    height: 30px;
 }
 input{
-    margin-left: 2%;
+    margin-left: 16 %;
     width: 40%;
+    height: 30px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 5%;
 }

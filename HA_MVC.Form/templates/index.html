@@ -7,24 +7,6 @@
 <link rel="stylesheet" href="style.css">
 <script src='https://www.google.com/recaptcha/api.js?' async defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script language="javascript">
-        function load_ajax() {
-            $.ajax({
-                type: "POST",
-                url: "http://localhost:8080/form",
-                method: "POST",
-                dataType: "json",
-                data: JSON.stringify(
-                    {
-                        fullname : $('#fullname').val(),
-                        companyname :  $('#companyname').val(),
-                        businessphone :  $('#businessphone').val(),
-                        email :  $('#email').val(),
-                        message :  $('#message').val()
-                    }) 
-                })
-        };
-</script>
 
 </head>
 <body>
@@ -34,7 +16,7 @@
             <div class="field">
                 <button id="btn1" class="ui button" ><i class="address card icon"></i>CONTACT US</button>
             </div>
-            <form class="ui form" id="myform" onsubmit="load_ajax()">
+            <form class="ui form" id="myform" onsubmit="load_ajax();submitUserForm();">
                 <div class="field">
                     <h1 style="color: darkblue;">SEND US A MESSAGE</h1>
                 </div>
@@ -68,7 +50,7 @@
                         <input type="text" id="message" name="message" placeholder="MESSAGE" required>
                     </div>
                 </div><br>
-                    <div class="g-recaptcha" data-sitekey="6Le90ZUjAAAAAFpiWYrO31ETaTEcE1x877I5mCU3"></div><br>
+                    <div class="g-recaptcha" data-sitekey="6Le90ZUjAAAAAFpiWYrO31ETaTEcE1x877I5mCU3"  data-callback="verifyCaptcha"></div><br>
                     <button id="btn2" type="submit" class="ui button">SEND MESSAGE</button>
               </form>
           </div>
@@ -104,4 +86,33 @@
         </div>
       </div>
 </body>  
+<script language="javascript">
+    function load_ajax() {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/form",
+            method: "POST",
+            dataType: "json",
+            data: JSON.stringify(
+                {
+                    fullname : $('#fullname').val(),
+                    companyname :  $('#companyname').val(),
+                    businessphone :  $('#businessphone').val(),
+                    email :  $('#email').val(),
+                    message :  $('#message').val()
+                }),
+                
+            })
+    };
+
+$(document).on('click', '#btn2', function () {
+    var response = grecaptcha.getResponse();
+    // alert(response);
+    if (response == 0) {
+        alert("Please check reCaptcha failed");
+        return false;
+    }
+    
+});
+</script>
 </html>

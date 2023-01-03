@@ -29,7 +29,7 @@ func (f *RoleModel) TableName() string {
 }
 
 type Role_User struct {
-	Id     int `json:"id" gorm:"AUTO_INCREMENT;"`
+	Id     int `json:"id" gorm:"AUTO_INCREMENT;PRIMARY_KEY;"`
 	UserId int `json:"userid" gorm:"ForeignKey:userid;column:userid;"`
 	RoleId int `json:"roleid" gorm:"ForeignKey:roleid;column:roleid;"`
 }
