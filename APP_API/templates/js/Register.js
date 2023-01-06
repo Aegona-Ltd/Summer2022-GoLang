@@ -10,6 +10,7 @@ function load_ajax() {
                 companyname :  $('#companyname').val(),
                 businessphone :  $('#businessphone').val(),
                 email :  $('#email').val(),
+                password: $('#password').val(),
                 message :  $('#message').val()
             }),
             
