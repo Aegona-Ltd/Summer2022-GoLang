@@ -1,7 +1,7 @@
 function load_ajax() {
   $.ajax({
     type: "GET",
-    url: "http://localhost:8080/form",
+    url: "http://localhost:1974/user",
     method: "GET",
     dataType: "json",
     success: function (data) {
@@ -10,14 +10,14 @@ function load_ajax() {
       for(let product of data){
          out += `
             <tr>
-               <td> ${product.id}</td>
+               <td> ${product.userid}</td>
                <td> ${product.fullname}</td>
                <td> ${product.companyname}</td>
                <td> ${product.businessphone}</td>
                <td> ${product.email}</td>
                <td> ${product.message}</td>
                <td> ${product.createtime}</td>
-               <td> ${product.updatetime}</td>
+               <td> ${product.updatetime}</td> 
             </tr>
          `;
       }
@@ -29,7 +29,7 @@ function GetEmail() {
   stringemail = document.getElementById("param").value;
   $.ajax({
     type: "GET",
-    url: "http://localhost:8080/form/" + stringemail,
+    url: "http://localhost:5000/user/" + stringemail,
     method: "GET",
     dataType: "json",
     success: function (data) {
@@ -139,5 +139,6 @@ function GetOderByCreateTime() {
     });
 
 }
+
 
 
