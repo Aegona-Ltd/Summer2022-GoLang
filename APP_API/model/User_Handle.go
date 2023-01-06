@@ -25,7 +25,7 @@ func CreateUserHandle(user *UserModel) (err error) {
 
 // getbyid
 func GetUserByIdHandle(user *UserModel, id string) (err error) {
-	err = database.DB.Where("userid = ?", id).First(user).Error
+	err = database.DB.Model(&UserModel{}).Preload("Role_User").Where("userid = ?", id).First(user).Error
 	if err != nil {
 		return database.DB.Error
 	}

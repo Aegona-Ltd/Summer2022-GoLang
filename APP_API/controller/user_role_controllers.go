@@ -45,7 +45,7 @@ func Update_User(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": err.Error()})
 	} else {
-		c.JSON(http.StatusOK, gin.H{"user": user.UserId})
+		c.JSON(http.StatusOK, user)
 	}
 	log.Print("End Update_User")
 }
@@ -76,7 +76,7 @@ func GetById_User(c *gin.Context) {
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{"error": err.Error()})
 	} else {
-		c.JSON(http.StatusOK, gin.H{"user": user.UserId})
+		c.JSON(http.StatusOK, user)
 	}
 	log.Print("End GetById_User")
 }

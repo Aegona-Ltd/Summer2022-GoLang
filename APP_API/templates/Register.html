@@ -4,7 +4,7 @@
 <title>Page Title</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style/Register.css">
 <script src='https://www.google.com/recaptcha/api.js?' async defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -86,33 +86,5 @@
         </div>
       </div>
 </body>  
-<script language="javascript">
-    function load_ajax() {
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:5000/user",
-            method: "POST",
-            dataType: "json",
-            data: JSON.stringify(
-                {
-                    fullname : $('#fullname').val(),
-                    companyname :  $('#companyname').val(),
-                    businessphone :  $('#businessphone').val(),
-                    email :  $('#email').val(),
-                    message :  $('#message').val()
-                }),
-                
-            })
-    };
-
-$(document).on('click', '#btn2', function () {
-    var response = grecaptcha.getResponse();
-    // alert(response);
-    if (response == 0) {
-        alert("Please check reCaptcha failed");
-        return false;
-    }
-    
-});
-</script>
+<script type="text/javascript" src="js/Register.js"></script>
 </html>

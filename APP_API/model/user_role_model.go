@@ -11,6 +11,7 @@ type UserModel struct {
 	CompanyName   string      `json:"companyname" gorm:"column:companyname;"`
 	BusinessPhone string      `json:"businessphone" gorm:"column:businessphone;"`
 	Email         string      `json:"email" gorm:"column:email;"`
+	Password      string      `json:"password" gorm:"column:password;"`
 	Message       string      `json:"message" gorm:"column:message;"`
 	CreateTime    time.Time   `json:"createtime" gorm:"column:createtime;"`
 	UpdateTime    time.Time   `json:"updatetime" gorm:"column:updatetime;"`
