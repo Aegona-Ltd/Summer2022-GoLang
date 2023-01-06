@@ -6,9 +6,9 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-// getall
+// get all user and role
 func GetAllUser_Handle(user *[]UserModel) (err error) {
-	if err = database.DB.Find(user).Error; err != nil {
+	if err = database.DB.Model(&UserModel{}).Preload("Role_User").Find(&user).Error; err != nil {
 		return err
 	}
 	return nil
@@ -16,8 +16,8 @@ func GetAllUser_Handle(user *[]UserModel) (err error) {
 
 // create
 func CreateUserHandle(user *UserModel) (err error) {
-	err = database.DB.Create(user).Error
-	if err != nil {
+	err = database.DB.Create(&user).Error
+	if err == nil {
 		return err
 	}
 	return nil
@@ -25,7 +25,7 @@ func CreateUserHandle(user *UserModel) (err error) {
 
 // getbyid
 func GetUserByIdHandle(user *UserModel, id string) (err error) {
-	err = database.DB.Where("id = ?", id).First(user).Error
+	err = database.DB.Where("userid = ?", id).First(user).Error
 	if err != nil {
 		return database.DB.Error
 	}
@@ -41,6 +41,6 @@ func UpdateUserHandle(user *UserModel, id string) (err error) {
 
 // delete
 func DeleteUserHandle(user *UserModel, id string) (err error) {
-	database.DB.Where("id = ?", id).Delete(user)
+	database.DB.Where("userid = ?", id).Delete(user)
 	return nil
 }
